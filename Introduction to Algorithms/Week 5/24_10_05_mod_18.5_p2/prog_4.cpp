@@ -1,0 +1,68 @@
+/***********************************************************************
+
+Name --> V. Creating Expression1
+Link --> https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/V
+--> Solution --> https://ideone.com/qy1Gzd
+
+***********************************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define int long long
+#define endl '\n'
+#define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
+#define sz(x) ((int)(x).size())
+#define pb push_back
+#define mp make_pair
+#define fi first
+#define se second
+#define rep(i, a, b) for (int i = (a); i < (b); ++i)
+#define per(i, a, b) for (int i = (b) - 1; i >= (a); --i)
+#define trav(a, x) for (auto &a : x)
+#define UNIQUE(v) v.erase(unique(all(v)), v.end())
+//********************************************************************
+
+int n, x;
+
+int arr[21];
+
+int Tsum(int sum, int index)
+{
+    if (index == n)
+        return sum == x;
+
+    bool route1 = Tsum(sum + arr[index], index + 1);
+    bool route2 = Tsum(sum - arr[index], index + 1);
+    return route1 || route2;
+}
+
+void solve()
+{
+    cin >> n >> x;
+
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    if (Tsum(arr[0], 1))
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
+}
+
+int32_t main()
+{
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    int t = 1;
+    // cin >> t; // Uncomment if multiple test cases
+
+    while (t--)
+    {
+        solve();
+    }
+
+    return 0;
+}
