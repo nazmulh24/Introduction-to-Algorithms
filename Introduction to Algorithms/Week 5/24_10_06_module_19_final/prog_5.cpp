@@ -23,16 +23,6 @@ using namespace std;
 #define UNIQUE(v) v.erase(unique(all(v)), v.end())
 //********************************************************************
 
-int max1, max2;
-
-void fun(int n, vector<int> h)
-{
-    sort(h.begin(), h.end());
-
-    max1 = h[n - 1];
-    max2 = h[n - 2];
-}
-
 void solve()
 {
     int n;
