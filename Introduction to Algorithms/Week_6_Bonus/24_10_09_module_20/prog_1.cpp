@@ -36,6 +36,8 @@ void solve()
 
     for (int i = 0; i < n; i++)
         cin >> weight[i];
+
+    
 }
 
 int32_t main()
