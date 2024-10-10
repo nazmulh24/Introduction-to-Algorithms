@@ -1,6 +1,6 @@
 /***********************************************************************
 
-Name --> 
+Name --> Unbounded Knapsack Implementation
 Link -->
 
 ***********************************************************************/
@@ -18,15 +18,24 @@ using namespace std;
 #define fi first
 #define se second
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
-#define per(i, a, b) for (int i = (b)-1; i >= (a); --i)
+#define per(i, a, b) for (int i = (b) - 1; i >= (a); --i)
 #define trav(a, x) for (auto &a : x)
 #define UNIQUE(v) v.erase(unique(all(v)), v.end())
 //********************************************************************
 
-
 void solve()
 {
-    // Your code here
+    int n, w;
+    cin >> n >> w;
+
+    int value[n];
+    int weight[n];
+
+    for (int i = 0; i < n; i++)
+        cin >> value[i];
+
+    for (int i = 0; i < n; i++)
+        cin >> weight[i];
 }
 
 int32_t main()
@@ -37,7 +46,8 @@ int32_t main()
     int t = 1;
     // cin >> t; // Uncomment if multiple test cases
 
-    while (t--){
+    while (t--)
+    {
         solve();
     }
 
