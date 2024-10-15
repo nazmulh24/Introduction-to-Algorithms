@@ -1,6 +1,6 @@
 /***********************************************************************
 
-Name -->
+Name --> Find the Maximum even
 Link -->
 
 ***********************************************************************/
@@ -25,7 +25,48 @@ using namespace std;
 
 void solve()
 {
-    // Your code here
+    int n;
+    cin >> n;
+
+    int a[n];
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+
+    sort(a, a + n, greater<int>());
+
+    int e1 = -1, e2 = -1, o1 = -1, o2 = -1;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] % 2 == 0)
+        {
+            if (e1 == -1)
+                e1 = a[i];
+            else if (e2 == -1)
+                e2 = a[i];
+        }
+        else
+        {
+            if (o1 == -1)
+                o1 = a[i];
+            else if (o2 == -1)
+                o2 = a[i];
+        }
+
+        if (e1 != -1 && e2 != -1 && o1 != -1 && o2 != -1)
+            break;
+    }
+
+    int ans = -1;
+
+    if (e1 != -1 && e2 != -1)
+        ans = max(ans, e1 + e2);
+    if (o1 != -1 && o2 != -1)
+        ans = max(ans, o1 + o2);
+    if (e1 != -1)
+        ans = max(ans, e1);
+
+    cout << ans << endl;
 }
 
 int32_t main()

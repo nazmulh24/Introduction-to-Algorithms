@@ -1,6 +1,6 @@
 /***********************************************************************
 
-Name -->
+Name --> The Lost Book
 Link -->
 
 ***********************************************************************/
@@ -25,7 +25,32 @@ using namespace std;
 
 void solve()
 {
-    // Your code here
+    int n;
+    cin >> n;
+
+    vector<pair<int, int> > v(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i].fi;
+        v[i].se = i;
+    }
+    int t;
+    cin >> t;
+
+    sort(v.begin(), v.end());
+
+    int ans = -1;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (v[i].fi == t)
+        {
+            ans = v[i].se;
+            break;
+        }
+    }
+
+    cout << ans << endl;
 }
 
 int32_t main()

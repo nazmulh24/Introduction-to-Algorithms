@@ -1,6 +1,6 @@
 /***********************************************************************
 
-Name -->
+Name --> Sending Message
 Link -->
 
 ***********************************************************************/
@@ -25,7 +25,24 @@ using namespace std;
 
 void solve()
 {
-    // Your code here
+    string w1, w2;
+
+    while (cin >> w1 >> w2)
+    {
+        int i = 0, j = 0;
+
+        while (i < w1.size() && j < w2.size())
+        {
+            if (w1[i] == w2[j])
+                j++;
+            i++;
+        }
+
+        if (j == w2.size())
+            cout << "Possible" << endl;
+        else
+            cout << "Impossible" << endl;
+    }
 }
 
 int32_t main()
